@@ -1,5 +1,5 @@
 {
-  "name": "Proyecto-Sistemas-y-Tecnologias-Web",
+  "name": "sistemas-y-tecnologias-web-proyecto-final",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alu0101254678/Proyecto-Sistemas-y-Tecnologias-Web.git"
+    "url": "git+https://github.com/alu0101254678/sistemas-y-tecnologias-web-proyecto-final.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alu0101254678/Proyecto-Sistemas-y-Tecnologias-Web/issues"
+    "url": "https://github.com/alu0101254678/sistemas-y-tecnologias-web-proyecto-final/issues"
   },
-  "homepage": "https://github.com/alu0101254678/Proyecto-Sistemas-y-Tecnologias-Web#readme",
+  "homepage": "https://github.com/alu0101254678/sistemas-y-tecnologias-web-proyecto-final#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
