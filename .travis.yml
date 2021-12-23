@@ -1,26 +1,30 @@
-notifications:
-  email:
-    recipients:
-      - alu0101254678@ull.edu.es
-
 language: node_js
 
 node_js:
-  - 16
+  - "17.2.0"
+
+branches:
+  only:
+    - master
+
+addons:
+  chrome: stable
 
 before_script:
   - npm install
 
-script:
-  - npm run test:headless
+cache:
+  directories:
+    - node_modules
 
-before_deploy:
-  - npm run build:prod
+script:
+  - npm build --prod
 
 deploy:
   provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist/sistemas-y-tecnologias-web-proyecto-final
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  local-dir:  ./dist/
   on:
-    branch: master
+
