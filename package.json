@@ -6,9 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "build:prod": "ng build --prod --base-href https://github.com/alu0101254678/sistemas-y-tecnologias-web-proyecto-final.git",
-    "test:headless": "ng test --watch=false --browsers=ChromeHeadless"
+    "test": "ng test"
   },
   "private": false,
   "dependencies": {
