@@ -15,7 +15,7 @@ export class TokenInterceptorService implements HttpInterceptor{
   intercept(req: HttpRequest<any>, next: HttpHandler) { //añade una cabecera en cada peticion
     const tokenizeReq = req.clone({
       setHeaders: {
-        Authorizacion: `Bearer ${this.registro.getToken()}`
+        Authorization: `Bearer ${this.registro.getToken()}`
       }
     })
     return next.handle(tokenizeReq);

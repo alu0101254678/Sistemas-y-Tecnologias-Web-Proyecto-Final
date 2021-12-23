@@ -87,6 +87,9 @@ router.get('/misproductos', verifyToken, (req, res) => {
 module.exports = router;
 
 function verifyToken(req, res, next) {
+  console.log("->");
+  console.log(req.headers);
+
   if (!req.headers.authorization) {
     return res.status(401).send('Autorización errónea');
   }
@@ -97,7 +100,7 @@ function verifyToken(req, res, next) {
   }
 
   const payload = jwt.verify(token, 'secretkey'); //contenido que esta dentro del token
-  //console.log(payload);
+  console.log(payload);
   req.userId = payload._id;
   next();
 
