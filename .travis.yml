@@ -1,0 +1,26 @@
+notifications:
+  email:
+    recipients:
+      - alu0101254678@ull.edu.es
+
+language: node_js
+
+node_js:
+  - 16
+
+before_script:
+  - npm install
+
+script:
+  - npm run test:headless
+
+before_deploy:
+  - npm run build:prod
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/sistemas-y-tecnologias-web-proyecto-final
+  on:
+    branch: master
