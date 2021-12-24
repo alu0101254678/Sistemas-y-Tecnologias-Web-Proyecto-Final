@@ -19,10 +19,3 @@ script:
   - npm run build
   - npm run test
   
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist/sistemas-y-tecnologias-web-proyecto-final
-  on:
-    branch: master
