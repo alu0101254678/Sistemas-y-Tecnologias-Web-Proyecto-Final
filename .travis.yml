@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+  - "8"
+dist: trusty
+sudo: false
+
+branches:
+  only:
+  - master
+
+cache:
+  directories:
+    - node_modules
+
+addons:
+  chrome: stable
+
+script:
+  - npm run build
+  - npm run test
+  
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/sistemas-y-tecnologias-web-proyecto-final
+  on:
+    branch: master
