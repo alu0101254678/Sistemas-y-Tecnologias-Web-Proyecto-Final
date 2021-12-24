@@ -1,23 +1,16 @@
 language: node_js
 node_js:
-  - "12"
-dist: trusty
-sudo: required
-
-branches:
-  only:
-  - master
-
-cache:
-  directories:
-    - node_modules
+  - "16"
 
 addons:
   chrome: stable
+
+cache:
+  directories:
+     - ./node_modules
 
 install:
   - npm install
 
 script:
-  - npm run build
-  - npm run test 
+  - npm run test -- --no-watch --no-progress --browsers=ChromeHeadless

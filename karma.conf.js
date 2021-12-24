@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/sistemas-y-tecnologias-web-proyecto-final'),
+      dir: require('path').join(__dirname, './coverage/angular-ejemplo'),
       subdir: '.',
       reporters: [
         { type: 'html' },
@@ -39,13 +39,6 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    restartOnFileChange: true,
-    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessCI'],
-    customLaunchers: {
-    ChromeHeadlessCI: {
-        base: 'ChromeHeadless',
-        flags: ['--disable-translate', '--disable-extensions', '--remote-debugging-port=9223']
-      }
-    },
+    restartOnFileChange: true
   });
 };
