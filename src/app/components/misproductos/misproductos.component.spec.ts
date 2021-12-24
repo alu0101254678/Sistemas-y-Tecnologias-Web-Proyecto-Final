@@ -17,9 +17,6 @@ describe('MisproductosComponent', () => {
     fixture = TestBed.createComponent(MisproductosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });

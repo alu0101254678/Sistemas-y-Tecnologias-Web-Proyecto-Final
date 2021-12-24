@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SigninComponent } from './signin.component';
+import { Router } from '@angular/router';
+import { RegistroService } from '../../services/registro.service';
 
 describe('SigninComponent', () => {
   let component: SigninComponent;
@@ -8,6 +10,7 @@ describe('SigninComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [Router],
       declarations: [ SigninComponent ]
     })
     .compileComponents();
@@ -19,7 +22,4 @@ describe('SigninComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });
