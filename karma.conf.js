@@ -40,11 +40,11 @@ module.exports = function (config) {
     browsers: ['Chrome'],
     singleRun: false,
     restartOnFileChange: true,
-    browsers: ['ChromeHeadlessCI'],
+    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessCI'],
     customLaunchers: {
     ChromeHeadlessCI: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox', '--headless', '--remote-debugging-port=9222']
+        flags: ['--disable-translate', '--disable-extensions', '--remote-debugging-port=9223']
       }
     },
   });

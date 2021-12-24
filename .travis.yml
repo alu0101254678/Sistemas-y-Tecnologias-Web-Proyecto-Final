@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - "12"
 dist: trusty
+sudo: required
 
 branches:
   only:
@@ -9,7 +10,7 @@ branches:
 
 cache:
   directories:
-    - ./node_modules
+    - node_modules
 
 addons:
   chrome: stable
@@ -18,5 +19,5 @@ install:
   - npm install
 
 script:
-  - npm run build
-  - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+  - npm run watch
+  - npm run test 
