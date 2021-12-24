@@ -9,6 +9,9 @@ cache:
   directories:
      - ./node_modules
 
+notifications:
+  slack: '<sytw>:<GgiUiOJJeifKY0uamYUGF1Zr>#01'     
+
 install:
   - npm install
 
