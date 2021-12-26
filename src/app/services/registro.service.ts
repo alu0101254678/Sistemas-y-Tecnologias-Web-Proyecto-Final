@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegistroService {
 
-  private URL = 'http://localhost:3000/api';
+  private URL: string = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) { }
 
-  signUp(user: any) {
+  signUp(user: any): Observable<any> {
     return this.http.post<any>(this.URL + '/signup', user);
   }
 
-  signIn(user: any) {
+  signIn(user: any): Observable<any> {
     return this.http.post<any>(this.URL + '/signin', user);
   }
  
@@ -27,8 +28,12 @@ export class RegistroService {
     }
   }
 
-  getToken() {
+  getToken(): string | null {
     return localStorage.getItem('token');
+  }
+
+  getURL(): string {
+    return this.URL;
   }
 
 }

@@ -6,8 +6,13 @@ describe('RegistroService', () => {
   let service: RegistroService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({providers: [RegistroService]});
     service = TestBed.inject(RegistroService);
+  });
+
+  it('pruebas', (done: DoneFn) => {
+    let URL = 'http://localhost:3000/api';
+    expect(service.getURL()).toEqual(URL);
   });
 
 });
