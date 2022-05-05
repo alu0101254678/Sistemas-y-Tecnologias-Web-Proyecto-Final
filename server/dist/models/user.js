@@ -1,10 +1,11 @@
-const { Schema, model } = require('mongoose');
-const userSchema = new Schema({
-    name: String,
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = require("mongoose");
+const userSchema = new mongoose_1.Schema({
     email: String,
     password: String,
-    type: String
 }, {
     timestamps: true
 });
-module.exports = model('user', userSchema);
+exports.default = (0, mongoose_1.model)('user', userSchema);
+// module.exports = model('user', userSchema);

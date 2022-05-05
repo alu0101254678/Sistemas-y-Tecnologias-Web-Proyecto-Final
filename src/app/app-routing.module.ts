@@ -1,30 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-//Componentes
 
-import {ProductosComponent} from './components/productos/productos.component'
-import {MisproductosComponent} from './components/misproductos/misproductos.component'
+import { AnadirProductosComponent } from './components/anadir-productos/anadir-productos.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { EditorCatalogoComponent } from './components/editor-catalogo/editor-catalogo.component';
 import { AutorizacionGuard } from './autorizacion.guard';
-
+import { HomeComponent } from './components/home/home.component';
+import { CatalogoComponent } from './components/catalogo/catalogo.component';
 
 //cada vez que visite una ruta estos componentes van a ser renderizados
 //queremos que se muestre por defecto,'productos'
 
-const routes: Routes = [ //estas son las rutas definidas
+const routes: Routes = [
   {
     path: '',
-    redirectTo: '/productos',
+    redirectTo: '/home',
     pathMatch: 'full' //exactamente nos redirecciona a esa ruta
   },
   {
-    path: 'productos',
-    component: ProductosComponent //renderizas el componente
+    path: 'home',
+    component: HomeComponent //renderizas el componente
   },
   {
-    path: 'misproductos',
-    component: MisproductosComponent,
+    path: 'home/Catalogo/new',
+    component: AnadirProductosComponent,
     canActivate: [AutorizacionGuard]
   },
   {
@@ -34,8 +34,18 @@ const routes: Routes = [ //estas son las rutas definidas
   {
     path: 'signin',
     component: SigninComponent
+  },
+  {
+    path: 'home/Catalogo',
+    component: CatalogoComponent,
+    canActivate: [AutorizacionGuard]
+  },
+  {
+    path: 'home/Catalogo/:id',
+    component: EditorCatalogoComponent,
+    canActivate: [AutorizacionGuard]
   }
-]; 
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

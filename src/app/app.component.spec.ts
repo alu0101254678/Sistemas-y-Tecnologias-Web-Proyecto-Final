@@ -20,9 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'sistemas-y-tecnologias-web-proyecto-final'`, () => {
+  it(`should have as title 'frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('sistemas-y-tecnologias-web-proyecto-final');
+    expect(app.title).toEqual('frontend');
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.content span')?.textContent).not.toContain('frontend app is running!');
   });
 });

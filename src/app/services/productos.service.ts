@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { product } from '../interfaces/product';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,28 @@ export class ProductosService {
 
   constructor(private http: HttpClient) { }
 
-  fetchproductos() {
-    return this.http.get<any>(this.URL + '/misproductos');
+  createProduct(title: string, price: string, description: string, photo: File) {
+    const fd = new FormData();
+    fd.append('title', title);
+    fd.append('price', price);
+    fd.append('description', description);
+    fd.append('image', photo);
+    return this.http.post(this.URL + '/editarProducto', fd);
+  }
+
+  getProducts() {
+    return this.http.get<product[]>(this.URL + '/editarProducto');
+  }
+
+  getProduct(id: string) {
+    return this.http.get<product>(this.URL + '/editarProducto/' + id);
+  }
+
+  deleteProduct(id: string) {
+    return this.http.delete(this.URL + '/editarProducto/' + id);
+  }
+
+  updateProduct(id: string, title: string, price: string, description: string) {
+    return this.http.put(this.URL + '/editarProducto/' + id, {title, price, description});
   }
 }

@@ -1,10 +1,22 @@
-const mongoose = require('mongoose');
+import  mongoose, {ConnectOptions, connect}  from 'mongoose';
 
-mongoose.connect('mongodb://superAdmin:caramelo82@10.6.130.15:27017/prueba?authSource=admin', {
+async function startConnection() {
+  await connect('mongodb://localhost/angular-auth', 
+  { useNewUrlParser: true,
+    useUnifiedTopology: false,
+  } as ConnectOptions);
+  console.log('Conectado a la base de datos');
+}
+
+export default startConnection;
+
+/*
+mongoose.connect('mongodb://localhost/angular-auth', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).then(() => {
-  console.log('Connected to the database');
+}as ConnectOptions).then(() => {
+  console.log('Conectado a la base de datos');
 }).catch(() => {
-  console.log('Something went wrong when conecting to the database');
+  console.log('Ha habido un problema con la conexion a la base de datos');
 });
+*/

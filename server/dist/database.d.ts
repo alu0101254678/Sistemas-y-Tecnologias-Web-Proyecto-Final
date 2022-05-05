@@ -1,1 +1,2 @@
-declare const mongoose: any;
+declare function startConnection(): Promise<void>;
+export default startConnection;

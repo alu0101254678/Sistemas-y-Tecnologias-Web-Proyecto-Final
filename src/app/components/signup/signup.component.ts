@@ -27,14 +27,14 @@ export class SignupComponent implements OnInit {
       res => {
         console.log(res);
         localStorage.setItem('token', res.token);
-        this.router.navigate(['/misproductos']);
+        this.router.navigate(['/home/Catalogo']);
       },
       err => {
         //console.log('error');
         console.log(err);
       },
     )
-    //console.log(this.user);
+    console.log(this.user);
   }
 
 }
